@@ -1,18 +1,29 @@
-# AceStrats and ZealyOn Engine
+# ZealyOn Engine
 
-**Quantitative strategy research and trading infrastructure**
+**Quantitative strategy research and validation infrastructure**
 
-AceStrats supports strategy research and candidate screening. The ZealyOn Engine adds Rust-based tooling for repeatable strategy validation, replay workflows, and system operations.
+ZealyOn Engine is the research and runtime foundation behind ZealyOn. It supports systematic exploration of strategy ideas, repeatable evaluation, and the services that connect strategy results to the product.
 
-## Project scope
+The project was previously known as **AceStrats**. The current product name is ZealyOn Engine.
 
-- Strategy search and candidate screening
-- Batch and replay validation
-- Rust command-line and desktop research tools
-- Shared contracts between research and runtime components
+## What it covers
 
-**Technology:** Python, vectorbt, Rust, desktop UI and CLI tooling.
+- **Research and screening:** organize candidate strategies and evaluate them against historical market data.
+- **Replay and validation:** run repeatable historical simulations and compare results across research and runtime workflows.
+- **Market-data workflows:** prepare and resample market datasets for research and analysis.
+- **Runtime services:** support strategy monitoring and the interfaces used by the ZealyOn product.
+- **Shared contracts:** keep data and behavior consistent where research tools and runtime components meet.
 
-This repository contains a public project summary only. It does not include trading strategies, source code, account details, credentials, or live operating instructions.
+## Engineering scope
 
-[See AceNetics](https://acenetics.dev)
+The active engine is built around Rust services, shared Rust libraries, and command-line and desktop research tools. The repository also contains historical research material; this public showcase describes the current engine direction and does not expose strategy source or operating configuration.
+
+## Technology
+
+Rust, market-data processing, replay and simulation workflows, command-line and desktop tooling.
+
+## About this repository
+
+This is a documentation-only public showcase. It does not include trading strategies, source code, account information, credentials, or live operating instructions.
+
+[Explore AceNetics](https://acenetics.dev)
