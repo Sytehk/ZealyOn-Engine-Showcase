@@ -1,29 +1,45 @@
 # ZealyOn Engine
 
-**Rust strategy research, backtesting, and live monitoring**
+**Rust strategy research, backtesting, replay, and live monitoring**
 
-ZealyOn Engine powers strategy search and evaluation for the ZealyOn product. It supports systematic research on historical market data and the ongoing monitoring that produces shared strategy records and user signals.
+ZealyOn Engine powers the strategy research and signal workflows used by ZealyOn. It connects historical market-data analysis with the live monitoring that maintains shared strategy records and produces signals for alerts and supported external account routes.
 
-## What it covers
+## The problem it addresses
 
-- **Strategy research:** search and screen rule-based crypto and forex strategy candidates against historical data.
-- **Backtesting and replay:** run repeatable simulations and inspect trade-by-trade results and performance over time.
-- **Live monitoring:** evaluate strategy signals as market data arrives and maintain a shared forward-tracked record.
-- **Alerts and execution signals:** alerts and supported External Live routes use the same strategy signal engine and completed-candle decisions.
-- **Shared behavior:** reuse strategy and replay logic across research and monitoring to keep their results comparable.
+A strategy can look convincing in a single historical chart and still be fragile. Useful evaluation needs repeatable datasets, explicit test assumptions, trade-level records, and a clear distinction between simulated performance and what happens in a connected broker account.
 
-A historical simulation, the shared forward-tracked record, and a user's broker fills describe different things. Fees, slippage, timing, market data, broker rules, and execution details can cause outcomes to differ. Historical performance is not a promise of future results.
+The engine supports a workflow that moves from research candidates to repeatable evaluation and ongoing monitoring. It is designed to make those stages comparable, while preserving the fact that a backtest and a live fill are not the same event.
+
+## Core capabilities
+
+- **Strategy search and screening:** evaluate rule-based crypto and forex candidates against historical market data.
+- **Backtesting:** replay historical periods and review trades, performance, and risk measures.
+- **Replay workflows:** rerun strategy logic against recorded data to investigate behavior and improve consistency.
+- **Live monitoring:** process incoming market data and maintain a forward-tracked record for each monitored strategy.
+- **Signal delivery:** provide the signal source used by alerts and supported External Live routes.
+- **Research tools:** support command-line and desktop workflows for data preparation, analysis, and review.
+
+## Shared strategy logic
+
+The active strategy search, backtesting, replay, and live engine is written in Rust. Shared Rust libraries are used across evaluation and monitoring so the same strategy rules can be applied consistently across those workflows. Alerts and supported external execution use signals from the same engine and closed-candle decisions.
+
+A shared strategy record is separate from each user's execution route. Each connected account has its own provider conditions and fill results. Fees, slippage, timing, market data, broker rules, sizing constraints, or software defects can make account results differ from a historical test or shared strategy record.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Sytehk/ZealyOn-Showcase/main/assets/strategy-discovery-example.jpg" width="340" alt="ZealyOn Discover interface preview powered by the strategy engine">
+</p>
+<p align="center"><sub>Product interface example showing strategy search criteria. It is not an engine benchmark or a performance result.</sub></p>
 
 ## Engineering scope
 
-The active strategy search, backtesting, replay, and live engine is written in Rust. The project includes shared Rust libraries and command-line and desktop research tools. Per-user execution routes are kept separate from the shared strategy record.
+The project includes Rust services, shared libraries, market-data workflows, replay and simulation components, plus command-line and desktop research tools. This showcase describes the current Rust engine direction without publishing strategy implementations or live operating details.
 
 ## Technology
 
-Rust, market-data processing, backtesting and replay workflows, command-line and desktop tooling.
+Rust, historical market-data processing, backtesting, replay, and command-line and desktop tooling.
 
-## About this repository
+## This repository
 
-This is a documentation-only public showcase. It does not include trading strategies, proprietary rules, source code, account information, credentials, or live operating instructions.
+This is a documentation-only project summary. It contains no strategy source, proprietary entry and exit rules, credentials, account details, or live deployment instructions.
 
 [Explore AceNetics](https://acenetics.dev)
