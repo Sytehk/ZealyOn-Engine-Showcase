@@ -4,8 +4,6 @@
 
 ZealyOn Engine is the research and runtime foundation behind ZealyOn. It supports systematic exploration of strategy ideas, repeatable evaluation, and the services that connect strategy results to the product.
 
-The project was previously known as **AceStrats**. The current product name is ZealyOn Engine.
-
 ## What it covers
 
 - **Research and screening:** organize candidate strategies and evaluate them against historical market data.
